@@ -241,7 +241,7 @@ test-e2e-smoke:
 	python -m pytest -m smoke --verify $${IS_API_SECURED:-true} --junit-xml pytest_e2e_smoke.xml
 
 test-e2e-extended:
-	$(call target_title, "Running E2E smoke tests") && \
+	$(call target_title, "Running E2E extended tests") && \
 	export SCOPE="api://${RESOURCE}/user_impersonation" && \
 	export WORKSPACE_SCOPE="api://${TEST_WORKSPACE_APP_ID}/user_impersonation" && \
 	cd e2e_tests && \

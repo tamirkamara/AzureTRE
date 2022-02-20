@@ -26,6 +26,5 @@
 1. Run the E2E tests:
 
    ```bash
-   PYTHONPATH=. python -m pytest --junit-xml pytest_e2e_smoke.xml
-   PYTHONPATH=. python -m pytest --junit-xml pytest_e2e_extended.xml
+   PYTHONPATH=. python -m pytest --junit-xml pytest_e2e.xml
    ```
