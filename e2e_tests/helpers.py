@@ -55,9 +55,12 @@ async def post_resource(payload, endpoint, resource_type, token, admin_token, ve
 
         full_endpoint = f"https://{config.TRE_ID}.{config.RESOURCE_LOCATION}.cloudapp.azure.com{endpoint}"
         print(f'POSTING RESOURCE TO: {full_endpoint}')
-
+        print(f'PAYLOAD: {payload}')
         response = await client.post(full_endpoint, headers=auth_headers, json=payload)
 
+        print(f'RESPONSE: {response}')
+        print(f'RESPONSE: {response.content}')
+        print(f'RESPONSE status code: {response.status_code}')
         assert (response.status_code == status.HTTP_202_ACCEPTED), f"Request for resource {payload['templateName']} creation failed"
 
         resource_path = response.json()["operation"]["resourcePath"]
